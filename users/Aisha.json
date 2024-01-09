@@ -1,0 +1,12 @@
+{
+	"Name": "Aisha",
+	"Age": 31,
+	"Contact": "9456732",
+	"Company": "Apple",
+	"Address": {
+		"City": "Cupertino",
+		"State": "California",
+		"Country": "United States",
+		"ZIP": 95014
+	}
+}

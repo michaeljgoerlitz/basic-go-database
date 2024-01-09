@@ -1,0 +1,12 @@
+{
+	"Name": "Emma",
+	"Age": 29,
+	"Contact": "8743210",
+	"Company": "Amazon",
+	"Address": {
+		"City": "Seattle",
+		"State": "Washington",
+		"Country": "United States",
+		"ZIP": 98109
+	}
+}

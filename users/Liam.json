@@ -1,0 +1,12 @@
+{
+	"Name": "Liam",
+	"Age": 28,
+	"Contact": "6182947",
+	"Company": "Facebook",
+	"Address": {
+		"City": "Menlo Park",
+		"State": "California",
+		"Country": "United States",
+		"ZIP": 94025
+	}
+}

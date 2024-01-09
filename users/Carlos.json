@@ -1,0 +1,12 @@
+{
+	"Name": "Carlos",
+	"Age": 35,
+	"Contact": "7625894",
+	"Company": "Microsoft",
+	"Address": {
+		"City": "Redmond",
+		"State": "Washington",
+		"Country": "United States",
+		"ZIP": 98052
+	}
+}
