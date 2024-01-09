@@ -103,11 +103,11 @@ func (d *Driver) Write(collection, resource string, v interface{}) error {
 
 func (d *Driver) Read(collection, resource string, v interface{}) error {
 	if collection == "" {
-		return fmt.Errorf("Missing collection - no place to save record!")
+		return fmt.Errorf("Missing collection - unable to read!")
 	}
 
 	if resource == "" {
-		return fmt.Errorf("Missing resource - unable to save record (no name)!")
+		return fmt.Errorf("Missing resource - unable to read record (no name)!")
 	}
 
 	record := filepath.Join(d.dir, collection, resource)
@@ -125,7 +125,32 @@ func (d *Driver) Read(collection, resource string, v interface{}) error {
 	return json.Unmarshal(b, &v)
 }
 
-func (d *Driver) ReadAll() {
+func (d *Driver) ReadAll(collection string) ([]string, error) {
+	if collection == "" {
+		return nil, fmt.Errorf("Missing collection - unable to read")
+	}
+
+	dir := filepath.Join(d.dir, collection)
+
+	if _, err := stat(dir); err != nil {
+		return nil, err
+	}
+
+	files, _ := ioutil.ReadDir(dir)
+
+	var records []string
+
+	for _, file := range files {
+		b, err := ioutil.ReadFile(filepath.Join(dir, file.Name()))
+
+		if err != nil {
+			return nil, err
+		}
+
+		records = append(records, string(b))
+	}
+
+	return records, nil
 
 }
 
